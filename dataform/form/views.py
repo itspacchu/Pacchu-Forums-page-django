@@ -23,20 +23,21 @@ def contact(request):
     return render(request,'form.html',{'form':form ,'messages':messages})
 
 def snippet_detail(request):
-    try:
-        Snippet.objects.filter(user_ip = socket.gethostbyname(socket.gethostname()))
-        messages.warning(request,random.choice(custom_form_sent_msgs))
-        return redirect('success')
-    except:
+    if(Snippet.objects.filter(user_ip = socket.gethostbyname(socket.gethostname())).first() == None):
         if(request.method == 'POST'):
             form = SnipperForm(request.POST)
             if(form.is_valid()):
                 form.save()
                 messages.success(request,random.choice(custom_form_success_msgs))
                 return redirect('success')
-
             else:
                 messages.warning(request,'Something , Somewhere went wrong?')
+    else:
+        messages.warning(request,random.choice(custom_form_sent_msgs))
+        return redirect('success')
+        
+
+            
 
     form = SnipperForm()  
     return render(request,'index.html',{'form':form ,})
