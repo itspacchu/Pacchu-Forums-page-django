@@ -1,0 +1,15 @@
+{% load crispy_forms_tags %}
+
+<html>
+    <head>
+        <title> Legion Coding Form </title> 
+    </head>
+    <body>
+        <form method='post'>
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit"> Join </button>
+        </form>
+        
+    </body>
+</html>

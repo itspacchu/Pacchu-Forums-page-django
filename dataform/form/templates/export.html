@@ -1,0 +1,86 @@
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>ACE : LegionCodex</title>
+    <link rel="stylesheet" href={% static "/assets/pacchu.css" %} >
+    <link rel="stylesheet" href={% static "/assets/bootstrap/css/bootstrap.min.css" %} >
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href={% static "/assets/fonts/font-awesome.min.css" %}>
+</head>
+    <!---Working-->
+
+    <body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand">ACE : LegionCodex</a>
+            <div
+                class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto"></ul>
+        </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-light fixed-top" >
+        <div class="container"><a class="navbar-brand">
+
+
+                </a>
+            <div
+                class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url({% static "assets/img/deadsec.gif" %});">
+        <div class="overlay"></div>
+        <div class="container" style="height: 500px;">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <div class="site-heading">
+                        <h1 class="wht">Database Export Form</h1><span class="subheading">  
+
+    </div>
+    <hr>
+    <div>
+    {% if user.is_superuser %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>Please select format of file.</p>
+    <select name="file-format" class="form-control my-3">
+        <option selected>Choose format...</option>
+        <option>CSV</option>
+        <option>JSON</option>
+        <option>XLS (Excel)</option>
+      </select>
+    <button class="btn btn-primary" type="submit">Export</button>
+  </form>
+{% else %}
+<div class="alert alert-warning"> I can see you 👁‍🗨👁‍🗨 {{ username }} </div>
+<h3> O' Lost Child ... I see you got Lost </h3>
+{% endif %}
+
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <p class="text-muted copyright">Made with ❤ by Prashant</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src={% static "/assets/js/jquery.min.js" %}></script>
+    <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
+</body>
+
+</html>
+</html>
