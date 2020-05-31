@@ -70,4 +70,7 @@ def export_data(request):
         username=" "
     return render(request, 'export.html',{'username':username})
 
+def crew_page(requests):
+    return render(requests,'about.html')
+
     
