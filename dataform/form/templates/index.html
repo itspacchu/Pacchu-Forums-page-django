@@ -2,164 +2,150 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>ACE : LegionCodex</title>
-    <link rel="stylesheet" href={% static "/assets/pacchu.css" %} >
-    <link rel="stylesheet" href={% static "/assets/bootstrap/css/bootstrap.min.css" %} >
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href={% static "/assets/fonts/font-awesome.min.css" %}>
-</head>
-    <!---Working-->
-
-    <body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand">ACE : LegionCodex</a>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>ACE : LegionCodex</title>
+      <link rel="stylesheet" href={% static "/assets/pacchu.css" %} >
+      <link rel="stylesheet" href={% static "/assets/css/main.css" %} >
+      <link rel="stylesheet" href={% static "/assets/css/util.css" %} >
+      <link rel="stylesheet" href={% static "/assets/bootstrap/css/bootstrap.min.css" %} >
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+      <link rel="stylesheet" href={% static "/assets/fonts/font-awesome.min.css" %}>
+   </head>
+   <!---Working-->
+   <body>
+      <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand">ACE : LegionCodex</a>
             <div
-                class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto"></ul>
-        </div>
-        </div>
-    </nav>
-    <nav class="navbar navbar-light fixed-top" >
-        <div class="container"><a class="navbar-brand">
-
-<!-- some very useful script 😉-->
-
-
-
-
-        </a>
+               class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="nav navbar-nav ml-auto"></ul>
+            </div>
+         </div>
+      </nav>
+      <nav class="navbar navbar-light fixed-top" >
+         <div class="container">
+            <a class="navbar-brand">
+               <!-- some very useful script 😉-->
+            </a>
             <div
-                class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto">
-                </ul>
-        </div>
-        </div>
-    </nav>
-    <header class="masthead" style="background-image:url({% static "assets/img/coding-bg.jpg" %});">
-        <div class="overlay"></div>
-        <div class="container" style="height: 500px;">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto">
-                    <div class="site-heading">
-                        <h1 class="wht">Join ACE LegionCodex</h1><span class="subheading">
-                        <script>
-            document.addEventListener('DOMContentLoaded',function(event){
-  // array with texts to type in typewriter
-  var dataText = [ 'print("LegionCodex")', "LegionCodex", "Codex de la Légion", "लीजन कोडेक्स","レジオン コーデックス","console.log('sup');"];
-  
-  // type one text in the typwriter
-  // keeps calling itself until the text is finished
-  function typeWriter(text, i, fnCallback) {
-    // chekc if text isn't finished yet
-    if (i < (text.length)) {
-      // add next character to h1
-     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
-
-      // wait for a while and call this function again for next character
-      setTimeout(function() {
-        typeWriter(text, i + 1, fnCallback)
-      }, 100);
-    }
-    // text finished, call callback if there is a callback function
-    else if (typeof fnCallback == 'function') {
-      // call callback after timeout
-      setTimeout(fnCallback, 5000);
-    }
-  }
-  // start a typewriter animation for a text in the dataText array
-   function StartTextAnimation(i) {
-     if (typeof dataText[i] == 'undefined'){
-        setTimeout(function() {
-          StartTextAnimation(0);
-        }, 2000);
-     }
-     // check if dataText[i] exists
-    if (i < dataText[i].length) {
-      // text exists! start typewriter animation
-     typeWriter(dataText[i], 0, function(){
-       // after callback (and whole text has been animated), start next text
-       StartTextAnimation(i + 1);
-     });
-    }
-  }
-  // start the text animation
-  StartTextAnimation(0);
-});
-        
-        
-        
-</script>
-                        
-                        
-                        </span></div>
-                </div>
+               class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="nav navbar-nav ml-auto">
+               </ul>
             </div>
-        </div>
-    </header>
-
-    <div class="content-section container row col-md-10 col-lg-8 mx-auto">
-        {% if messages %}
-          {% for message in messages%}
-            <div class="alert alert-{{ message.tags }}">
-                Beep-Bop {{ message }}
+         </div>
+      </nav>
+      <header class="masthead" style="background-image:url({% static "assets/img/coding-bg.jpg" %});">
+      <div class="overlay"></div>
+      <div class="container" style="height: 500px;">
+         <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+               <div class="site-heading">
+                  <h1 class="wht">Join ACE LegionCodex</h1>
+                  <span class="subheading">
+                     <script>
+                        document.addEventListener('DOMContentLoaded',function(event){
+                        // array with texts to type in typewriter
+                        var dataText = [ 'print("LegionCodex")', "LegionCodex", "Codex de la Légion", "लीजन कोडेक्स","レジオン コーデックス","console.log('sup');"];
+                        
+                        // type one text in the typwriter
+                        // keeps calling itself until the text is finished
+                        function typeWriter(text, i, fnCallback) {
+                        // chekc if text isn't finished yet
+                        if (i < (text.length)) {
+                        // add next character to h1
+                        document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+                        
+                        // wait for a while and call this function again for next character
+                        setTimeout(function() {
+                        typeWriter(text, i + 1, fnCallback)
+                        }, 100);
+                        }
+                        // text finished, call callback if there is a callback function
+                        else if (typeof fnCallback == 'function') {
+                        // call callback after timeout
+                        setTimeout(fnCallback, 5000);
+                        }
+                        }
+                        // start a typewriter animation for a text in the dataText array
+                        function StartTextAnimation(i) {
+                        if (typeof dataText[i] == 'undefined'){
+                        setTimeout(function() {
+                        StartTextAnimation(0);
+                        }, 2000);
+                        }
+                        // check if dataText[i] exists
+                        if (i < dataText[i].length) {
+                        // text exists! start typewriter animation
+                        typeWriter(dataText[i], 0, function(){
+                        // after callback (and whole text has been animated), start next text
+                        StartTextAnimation(i + 1);
+                        });
+                        }
+                        }
+                        // start the text animation
+                        StartTextAnimation(0);
+                        });  
+                     </script>
+                  </span>
+               </div>
             </div>
-          {% endfor %}
-        {% endif %}
-        <form method="POST">
-        <h3 class="section-heading">Enter your details if you're interested</h3>
-        <br>
-        <br>
+         </div>
+      </div>
+      </header>
+      <div class="content-section container row col-md-10 col-lg-8 mx-auto">
+         {% if messages %}
+         {% for message in messages%}
+         <div class="alert alert-{{ message.tags }}">
+            Beep-Bop {{ message }}
+         </div>
+         {% endfor %}
+         {% endif %}
+         <form method="POST" enctype="multipart/form-data">
+            <h3 class="section-heading">Enter your details if you're interested</h3>
+            <br>
+            <br>
             {% csrf_token %}
             <fieldset class="form-group">
-                <!---polish this shit-->
-                    <br>
-                    {{ form.name|as_crispy_field }}
-                    <hr>
-                
-                    {{ form.rollno|as_crispy_field }}
-                    <hr>
-                    {{ form.sec|as_crispy_field }}
-                    <hr>
-                    {{ form.email|as_crispy_field }}
-                    <hr>
-                    {{ form.languages|as_crispy_field }}
-                    <hr>
-                    
-                    {{ form.githubusername|as_crispy_field }}
-                    <hr>
-                    {{ form.githublink|as_crispy_field }}
-                    <hr>
-                    {{ form.body|as_crispy_field }}
-                    
-                    
+               <!---polish this shit-->
+               <br>
+               {{ form.name|as_crispy_field }}
+               <hr>
+               {{ form.rollno|as_crispy_field }}
+               <hr>
+               {{ form.sec|as_crispy_field }}
+               <hr>
+               {{ form.email|as_crispy_field }}
+               <hr>
+               {{ form.languages|as_crispy_field }}
+               <hr>
+               {{ form.githubusername|as_crispy_field }}
+               <hr>
+               {{ form.githublink|as_crispy_field }}
+               <hr>
+               {{ form.body|as_crispy_field }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Join</button>
+               <button class="btn btn-outline-info" type="submit">Join</button>
             </div>
-        </form>
-        </div>
-    </div>
-    <hr>
-    <footer>
-        <div class="container">
+         </form>
+      </div>
+      </div>
+      <hr>
+      <footer>
+         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto">
-                    <p class="text-muted copyright">Made with ❤ by Prashant</p>
-                </div>
+               <div class="col-md-10 col-lg-8 mx-auto">
+                  <p class="text-muted copyright">Made with ❤ by Prashant</p>
+               </div>
             </div>
-        </div>
-    </footer>
-
-    <script src={% static "/assets/js/jquery.min.js" %}></script>
-    <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
-</body>
-
+         </div>
+      </footer>
+      <script src={% static "/assets/js/jquery.min.js" %}></script>
+      <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
+   </body>
 </html>

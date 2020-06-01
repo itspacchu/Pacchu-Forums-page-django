@@ -24,21 +24,27 @@ class Snippet(models.Model):
 
     name = models.CharField(
         max_length=100 ,
-        verbose_name="Name"
+        verbose_name="Name",
+        help_text="C'est Pacchu"
         )
 
     rollno = models.CharField(
         max_length=10,
-        verbose_name="Roll No"
+        verbose_name="Roll No",
+        help_text="18AG1A0420"
         )
 
     sec = models.CharField(
         max_length=10,
-        verbose_name="Class")
+        verbose_name="Class",
+        help_text="II ECE B"
+        )
+
 
     phoneno = PhoneField(
         blank=True,
-        verbose_name="Phone No"
+        verbose_name="Phone No",
+        help_text="9876543217"
         )
 
     languages = models.CharField(
@@ -51,23 +57,28 @@ class Snippet(models.Model):
     email = models.EmailField(
         blank=True,
         default=' ',
-        verbose_name="EMAIL"
+        verbose_name="EMAIL",
+        help_text="senpai.awesome@kawaii.com"
+
         )
 
     githubusername = models.CharField(
         max_length=50,
         blank=True,
-        verbose_name="Github Username"
+        verbose_name="Github Username",
+        help_text="itspacchu"
         )
 
     githublink = models.URLField(
         blank=True,
-        verbose_name="Github Profile")
+        verbose_name="Github Profile",
+        help_text="https://github.com/itspacchu"
+    )
     
     body = models.TextField(
         blank=True,
-        default='Any Queries?',
-        verbose_name="Suggestion"
+        verbose_name="Why do you want to join",
+        help_text="I would love to ..."
         )
 
     user_ip = models.GenericIPAddressField(default = socket.gethostbyname(socket.gethostname()))

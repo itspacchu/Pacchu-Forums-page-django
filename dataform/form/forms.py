@@ -1,6 +1,7 @@
 from django import forms
 from .models import Snippet
 from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Div, Field
 
 choices = [('python','Python'),('c','C'),('java','JAVA'),('javascript','Javascript'),('c++','C++'),('ruby','Ruby'),('csharp','C#'),('brainfuck','BrainFuck')]
 
@@ -16,6 +17,17 @@ class ContactForm(forms.Form):
     
 class SnipperForm(forms.ModelForm):
     helper = FormHelper()
+
+    
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for _, value in self.fields.items():
+            value.widget.attrs['placeholder'] = value.help_text
+            value.help_text = None
+
+
+
     class Meta:
         model = Snippet
         fields = {
@@ -29,6 +41,7 @@ class SnipperForm(forms.ModelForm):
             'githublink',
             'body',
         }
+
     field_order =  [
         'name',
         'rollno',
@@ -40,3 +53,6 @@ class SnipperForm(forms.ModelForm):
         'githublink',
         'body',
     ]
+
+
+    

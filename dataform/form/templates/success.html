@@ -1,140 +1,129 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>ACE : LegionCodex</title>
-    <link rel="stylesheet" href={% static "/assets/bootstrap/css/bootstrap.min.css" %} >
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
-    <link rel="stylesheet" href={% static "/assets/fonts/font-awesome.min.css" %}>
-</head>
-
-<body>
-    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand">ACE : LegionCodex</a>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>ACE : LegionCodex</title>
+      <link rel="stylesheet" href={% static "/assets/bootstrap/css/bootstrap.min.css" %} >
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+      <link rel="stylesheet" href={% static "/assets/fonts/font-awesome.min.css" %}>
+   </head>
+   <body>
+      <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+         <div class="container">
+            <a class="navbar-brand">ACE : LegionCodex</a>
             <div
-                class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="nav navbar-nav ml-auto"></ul>
-        </div>
-        </div>
-    </nav>
-    <header class="masthead" style="background-image:url({% static "assets/img/success.jpg" %});">
-        <div class="overlay"></div>
-        <div class="container" style="height: 500px;">
-            <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto">
-                    <div class="post-heading">
-                        <h1>Thank you for showing interest in LegionCodex</h1>
-                        <h2 class="subheading"> 
-                        <script>
-            document.addEventListener('DOMContentLoaded',function(event){
-  // array with texts to type in typewriter
-  var dataText = [ "Thank you for showing interest ❤", "print('You are awesome 😊')", "Vous êtes incroyables", "आप लोग अद्भुत हैं","あなたたちは素晴らしい"];
-  
-  // type one text in the typwriter
-  // keeps calling itself until the text is finished
-  function typeWriter(text, i, fnCallback) {
-    // chekc if text isn't finished yet
-    if (i < (text.length)) {
-      // add next character to h1
-     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
-
-      // wait for a while and call this function again for next character
-      setTimeout(function() {
-        typeWriter(text, i + 1, fnCallback)
-      },50 );
-    }
-    // text finished, call callback if there is a callback function
-    else if (typeof fnCallback == 'function') {
-      // call callback after timeout
-      setTimeout(fnCallback, 5000);
-    }
-  }
-  // start a typewriter animation for a text in the dataText array
-   function StartTextAnimation(i) {
-     if (typeof dataText[i] == 'undefined'){
-        setTimeout(function() {
-          StartTextAnimation(0);
-        }, 2000);
-     }
-     // check if dataText[i] exists
-    if (i < dataText[i].length) {
-      // text exists! start typewriter animation
-     typeWriter(dataText[i], 0, function(){
-       // after callback (and whole text has been animated), start next text
-       StartTextAnimation(i + 1);
-     });
-    }
-  }
-  // start the text animation
-  StartTextAnimation(0);
-});
-        
-        
-        
-        </script>
-                        
-                        
-                        
-                        
-                        </span></div>
-                </div>
+               class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="nav navbar-nav ml-auto"></ul>
             </div>
-        </div>
-    </header>
-    <article>
-        <div class="container">
-        {% if messages %}
-          {% for message in messages%}
+         </div>
+      </nav>
+      <header class="masthead" style="background-image:url({% static "assets/img/success.jpg" %});">
+      <div class="overlay"></div>
+      <div class="container" style="height: 500px;">
+         <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+               <div class="post-heading">
+                  <h1>Thank you for showing interest in LegionCodex</h1>
+                  <h2 class="subheading">
+                  <script>
+                     document.addEventListener('DOMContentLoaded',function(event){
+                     // array with texts to type in typewriter
+                     var dataText = [ "Thank you for showing interest ❤", "print('You are awesome 😊')", "Vous êtes incroyables", "आप लोग अद्भुत हैं","あなたたちは素晴らしい"];
+                     
+                     // type one text in the typwriter
+                     // keeps calling itself until the text is finished
+                     function typeWriter(text, i, fnCallback) {
+                     // chekc if text isn't finished yet
+                     if (i < (text.length)) {
+                     // add next character to h1
+                     document.querySelector("h1").innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+                     
+                     // wait for a while and call this function again for next character
+                     setTimeout(function() {
+                     typeWriter(text, i + 1, fnCallback)
+                     },50 );
+                     }
+                     // text finished, call callback if there is a callback function
+                     else if (typeof fnCallback == 'function') {
+                     // call callback after timeout
+                     setTimeout(fnCallback, 5000);
+                     }
+                     }
+                     // start a typewriter animation for a text in the dataText array
+                     function StartTextAnimation(i) {
+                     if (typeof dataText[i] == 'undefined'){
+                     setTimeout(function() {
+                     StartTextAnimation(0);
+                     }, 2000);
+                     }
+                     // check if dataText[i] exists
+                     if (i < dataText[i].length) {
+                     // text exists! start typewriter animation
+                     typeWriter(dataText[i], 0, function(){
+                     // after callback (and whole text has been animated), start next text
+                     StartTextAnimation(i + 1);
+                     });
+                     }
+                     }
+                     // start the text animation
+                     StartTextAnimation(0);
+                     });
+                     
+                     
+                     
+                  </script>
+                  </span>
+               </div>
+            </div>
+         </div>
+      </div>
+      </header>
+      <article>
+         <div class="container">
+            {% if messages %}
+            {% for message in messages%}
             <div class="alert alert-{{ message.tags }}">
-              Beep-bop
-              {{ message }}
+               Beep-bop
+               {{ message }}
             </div>
-          {% endfor %}
-        {% endif %}
+            {% endfor %}
+            {% endif %}
             <div class="row">
-                <div class="col-md-12 col-lg-7 mx-auto">
-                    <p><b>Welcome to the Familiy</b></p>
-                    <p> <b> {{ count_users }} </b>people including you have also shown interest in this club ❤ </p>
-                    <p> <b> Website under construction so.. Comming soon </b> </p>
-                    <p> Till then why don't you check out the cool lil Discord server we got 😁
-                    and the lovely people who made this all come together.
-                    
-                    </p>
-                    <a class="btn btn-outline-info" href={% url 'crew'%}>Crew</a>
-                    
-                    
-                </div>
-                <hr>
-                <br>
-                <div style="padding-left: 10%;">
-                <br>
-                <iframe src="https://discordapp.com/widget?id=716514482532253732&theme=light" width="100%" height="500" allowtransparency="true" frameborder="0"></iframe>
-                </div>
-                </div>
+               <div class="col-md-12 col-lg-7 mx-auto">
+                  <p><b>Welcome to the Familiy</b></p>
+                  <p> <b> {{ count_users }} </b>people including you have also shown interest in this club ❤ </p>
+                  <p> <b> Website under construction so.. Comming soon </b> </p>
+                  <p> Till then why don't you check out the cool lil Discord server we got 😁
+                     and the lovely people who made this all come together.
+                  </p>
+                  <a class="btn btn-outline-info" href={% url 'crew'%}>Crew</a>
+               </div>
+               <hr>
+               <br>
+               <div style="padding-left: 10%;">
+                  <br>
+                  <iframe src="https://discordapp.com/widget?id=716514482532253732&theme=light" width="100%" height="500" allowtransparency="true" frameborder="0"></iframe>
+               </div>
             </div>
-            
-        </div>
-    </article>
-    <footer>
-        <div class="container">
+         </div>
+         </div>
+      </article>
+      <footer>
+         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-lg-8 mx-auto">
-                    
-                    <p class="text-muted copyright">Made with ❤ by Prashant</p>
-                </div>
+               <div class="col-md-10 col-lg-8 mx-auto">
+                  <p class="text-muted copyright">Made with ❤ by Prashant</p>
+               </div>
             </div>
-        </div>
-    </footer>
-    <script src={% static "/assets/js/jquery.min.js" %}></script>
-    <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
-    <script>
-    </script>
-</body>
-
+         </div>
+      </footer>
+      <script src={% static "/assets/js/jquery.min.js" %}></script>
+      <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
+      <script></script>
+   </body>
 </html>
