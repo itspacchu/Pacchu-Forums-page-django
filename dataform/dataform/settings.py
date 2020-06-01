@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '0h$a+a7%wlaukf%z#b1qjn339xw0e@^g-hxpuli0k7ty_zo@7z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -58,8 +58,11 @@ ROOT_URLCONF = 'dataform.urls'
 
 TEMPLATES = [
     {
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            
+            ],
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,6 +74,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'dataform.wsgi.application'
 
@@ -123,6 +127,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = '/staticfiles/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
