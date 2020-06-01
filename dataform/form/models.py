@@ -51,14 +51,15 @@ class Snippet(models.Model):
         choices=choices,
         blank=True,
         max_length=200,
+        default="other",
         verbose_name="Preferred Language"
         )
 
     email = models.EmailField(
         blank=True,
         default=' ',
-        verbose_name="EMAIL",
-        help_text="senpai.awesome@kawaii.com"
+        verbose_name="Email Address",
+        help_text="senpai.awesome@kawaii.jp"
 
         )
 

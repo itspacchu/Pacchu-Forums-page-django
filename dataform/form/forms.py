@@ -41,6 +41,9 @@ class SnipperForm(forms.ModelForm):
             'githublink',
             'body',
         }
+        widgets = {
+        #'languages': forms.RadioSelect(),
+        }
 
     field_order =  [
         'name',
