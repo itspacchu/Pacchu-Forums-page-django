@@ -2,6 +2,7 @@ from django.db import models
 from phone_field import PhoneField
 from django import forms
 import socket
+from phonenumber_field.modelfields import PhoneNumberField
 
 class Snippet(models.Model):
     choices = [
@@ -41,11 +42,7 @@ class Snippet(models.Model):
         )
 
 
-    phoneno = PhoneField(
-        blank=True,
-        verbose_name="Phone No",
-        help_text="9876543217"
-        )
+    phoneno = PhoneNumberField(help_text="+919876543210")
 
     languages = models.CharField(
         choices=choices,

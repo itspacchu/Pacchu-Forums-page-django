@@ -22,9 +22,13 @@ class SnipperForm(forms.ModelForm):
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        super(SnipperForm, self).__init__(*args, **kwargs) # Call to ModelForm constructor
+        self.fields['body'].widget.attrs['cols'] = 25
         for _, value in self.fields.items():
             value.widget.attrs['placeholder'] = value.help_text
             value.help_text = None
+
+    
 
 
 

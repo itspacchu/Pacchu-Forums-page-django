@@ -102,6 +102,8 @@
                       <hr>
                       {{ form.sec|as_crispy_field }}
                       <hr>
+                      {{ form.phoneno|as_crispy_field }}
+                      <hr>
                       {{ form.email|as_crispy_field }}
                       <hr>
                       {{ form.languages|as_crispy_field }}
@@ -111,7 +113,8 @@
                       {{ form.githublink|as_crispy_field }}
                       <hr>
                       <div>
-                      <textarea name="{{ form.objective.html_name }}" cols="auto" rows="10" placeholder="I would love to ..." class="{{ form.objective.id_for_label }}" id="id_body" spellcheck="false" style="margin-top: 0px; margin-bottom: 0px; height: 298px;"></textarea>
+                           
+                        {{ form.body|as_crispy_field }}
                       </div>
                    </fieldset>
                    <div class="form-group">

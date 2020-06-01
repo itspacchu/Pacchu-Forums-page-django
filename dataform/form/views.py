@@ -31,7 +31,7 @@ def snippet_detail(request):
                 messages.success(request,random.choice(custom_form_success_msgs))
                 return redirect('success')
             else:
-                messages.warning(request,'Something , Somewhere went wrong?')
+                messages.warning(request,'Something isnt right? Check your phone no  +91{NUMBER}  without any spaces')
     else:
         messages.warning(request,random.choice(custom_form_sent_msgs))
         return redirect('success')
