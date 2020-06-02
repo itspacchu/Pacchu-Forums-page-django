@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import ContactForm,SnipperForm,AnimeForm
+from .forms import ContactForm,SnipperForm
 from django.contrib  import messages
 from .models import Snippet
 from .resources import SnippetResouce
