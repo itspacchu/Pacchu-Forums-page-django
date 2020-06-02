@@ -79,7 +79,8 @@ class Snippet(models.Model):
         help_text="I would love to ..."
         )
 
-    user_ip = models.GenericIPAddressField(default = socket.gethostbyname(socket.gethostname()))
+    user_ip = models.GenericIPAddressField(default = '0.0.0.0')
 
     def __str__(self):
         return self.name
+

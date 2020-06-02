@@ -1,5 +1,5 @@
 from django import forms
-from .models import Snippet
+from .models import Snippet , animepage
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Div, Field
 
@@ -18,8 +18,6 @@ class ContactForm(forms.Form):
 class SnipperForm(forms.ModelForm):
     helper = FormHelper()
 
-    
-    
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         super(SnipperForm, self).__init__(*args, **kwargs) # Call to ModelForm constructor
@@ -27,10 +25,6 @@ class SnipperForm(forms.ModelForm):
         for _, value in self.fields.items():
             value.widget.attrs['placeholder'] = value.help_text
             value.help_text = None
-
-    
-
-
 
     class Meta:
         model = Snippet
@@ -61,5 +55,3 @@ class SnipperForm(forms.ModelForm):
         'body',
     ]
 
-
-    

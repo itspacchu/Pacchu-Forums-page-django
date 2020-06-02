@@ -1,0 +1,118 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+      <title>ACE : LegionCrew</title>
+      <link rel="stylesheet" href={% static "assets/bootstrap/css/bootstrap.min.css"%}>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+      <link rel="stylesheet" href={% static "assets/fonts/font-awesome.min.css" %}>
+      <!--<link rel="stylesheet" href={% static "assets/css/styles.css" %}>-->
+   </head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand" href="{% url 'form-page' %}">ACE : LegionCodex/アニメ ❤</a>
+            <div
+                class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto">
+                </ul>
+        </div>
+        </div>
+    </nav>
+    <header class="masthead" style="background-image:url('https://media.giphy.com/media/xUNd9AXVApKAT4jKPC/giphy.gif');">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-lg-8 mx-auto">
+                    <div class="site-heading" style="min-height: 0px;width: 741px;">
+                        <h1>アニメ</h1>
+                        <div id='foopa' class='subheading'></div>
+                        <script>
+                            const messages = ['You snoopin kiddo', 'Wow you actually found something', 'you should not be here but ok?', 'Konnichiwa :D',"You shoudn't be here thou..??","Prashant will be mad if he saw you here :<"];
+                            const randomIndex = Math.round(Math.random()*messages.length);
+                            document.getElementById("foopa").innerHTML = messages[randomIndex];
+                        </script>
+                        
+                        </span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+           <div class="col-md-12 col-lg-7 mx-auto">
+                <div>
+                {% if messages %}
+                {% for message in messages%}
+                <div class="alert alert-{{ message.tags }}">
+               Nya :3 
+               {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+                </div>
+                <h1> こんにちは , アニメファンボア </h1>
+                <h2 class='subheading'><i> H e l l o , A ni m ē f a-n su</i> <h2>
+                <hr>
+                <hr>
+                <hr>
+                <h3 class='subheading'> idk what to put here so enjoy some gifs lol </h3>
+                <br>
+                <!---->
+                <br>
+                <img src="https://media.giphy.com/media/AEZktu90mImCQ/giphy.gif">
+                <br>
+                <hr>
+                <img src='https://media.discordapp.net/attachments/705805380667572246/708640798635196526/PotableDarkAkitainu-size_restricted_1.gif'>
+                <br>
+                <hr>
+                <img src='https://media.giphy.com/media/Wtb7WppZJpudsd6yl9/giphy.gif'>
+                <br>
+                <hr>
+                <img src='https://media.giphy.com/media/9FW5Sd0yNi7Fqa686b/giphy.gif'>
+                <br>
+                <hr>
+                <img src="https://media.discordapp.net/attachments/705805380667572246/708639333510414389/original.gif">
+                <br>
+                <hr>
+                <img src="https://media.discordapp.net/attachments/705805380667572246/708638247659503636/anime-gif-png-5.gif">
+                <br>
+                <hr>
+                <img src="https://media.discordapp.net/attachments/705805380667572246/708638427989540904/tumblr_inline_p7fvo3AeEp1qg4ggy_540.gif">
+                <br>
+                <hr>
+                <img src="https://media.giphy.com/media/xUOxfoNR0gziKGorLi/giphy.gif">
+                <h1> さよなら 日産 </h1>
+                <br>
+                <hr>
+                <h3 class='subheading'>
+                ”きみ の な わ” すごい でそ ね ❤
+                </h3>
+            <audio controls autoplay>
+            <source src="https://www104.zippyshare.com/d/gqyyzRpk/1930/test.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+            </audio>
+           </div>
+        </div>
+    </div>
+    <footer>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+               <p class="text-muted copyright">プルシャントの愛を込めて作られました ❤</p>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <script src={% static "/assets/js/jquery.min.js" %}></script>
+   <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+   <script src={% static "/assets/bootstrap/js/bootstrap.min.js" %}></script>
+   </body>
+
+</html>
